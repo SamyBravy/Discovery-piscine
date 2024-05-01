@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <input id="left"></input>
+        <select id="operator">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+            <option>%</option>
+        </select>
+        <input id="right"></input>
+        <button onclick="calc()">Try me!</button>
+    </body>
+    <script>
+        function calc()
+        {
+            var res;
+            var left = document.getElementById("left").value;
+            var right = document.getElementById("right").value;
+            var operator = document.getElementById("operator").value;
+            
+            if (left < 0 || right < 0 || Number.isInteger(parseFloat(left)) || Number.isInteger(parseFloat(right)))
+            {
+                alert('Error :(');
+                return ;
+            }
+            if (right == 0 && (operator == '/' || operator == '%'))
+            {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return ;
+            }
+            console.log(res);
+            alert(res);
+        }
+    </script>
+</html>
