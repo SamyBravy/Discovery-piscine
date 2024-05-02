@@ -12,6 +12,7 @@
         <input id="right"></input>
         <button onclick="calc()">Try me!</button>
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script>
         function useMe()
         {
@@ -22,9 +23,9 @@
         function calc()
         {
             var res;
-            var left = parseFloat(document.getElementById("left").value);
-            var right = parseFloat(document.getElementById("right").value);
-            var operator = document.getElementById("operator").value;
+            var left = parseFloat($('#left').val());
+            var right = parseFloat($('#right').val());
+            var operator = $('#operator').val();
             
             if (isNaN(left) || isNaN(right) || left < 0 || right < 0 || !Number.isInteger(left) || !Number.isInteger(right))
             {
